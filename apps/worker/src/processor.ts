@@ -8,5 +8,5 @@ export const worker = new Worker(
 
         return { ok: true };
     },
-    connection{}
+    { connection }
 )

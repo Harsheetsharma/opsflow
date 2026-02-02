@@ -1,6 +1,7 @@
 {
   "name": "@opsflow/queue",
   "private": true,
+  "main": "src/index.ts",
   "dependencies": {
     "bullmq": "^5.67.2",
     "ioredis": "^5.9.2"

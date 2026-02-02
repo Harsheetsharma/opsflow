@@ -1,0 +1,66 @@
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+enum ExecutionStatus {
+    PENDING
+    RUNNING
+    SUCCESS
+    FAILED
+}
+
+enum JobStatus {
+    WAITING
+    ACTIVE
+    SUCCESS
+    FAILED
+    RETRYING
+}
+
+model workflow {
+    id         String   @id @default(cuid())
+    name       String
+    definition Json //full workflow json
+    createdAt  DateTime @default(now())
+
+    executions Execution[]
+}
+
+model Execution {
+    id         String          @id @default(cuid())
+    workflowId String
+    status     ExecutionStatus @default(PENDING)
+    startedAt  DateTime?
+    finishedAt DateTime?
+
+    workflow workflow @relation(fields: [workflowId], references: [id])
+    jobs     Job[]
+}
+
+model Job {
+    id          String    @id @default(cuid())
+    executionId String
+    stepkey     String    @unique
+    status      JobStatus @default(WAITING)
+    attempts    Int       @default(0)
+    output      Json?
+    error       String?
+
+    execution Execution @relation(fields: [executionId], references: [id])
+    logs      jobLogs[]
+}
+
+model jobLogs {
+    id        String   @id @default(cuid())
+    jobId     String
+    level     String
+    message   String
+    createdAt DateTime @default(now())
+
+    job Job @relation(fields: [jobId], references: [id])
+}

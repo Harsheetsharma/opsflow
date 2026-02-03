@@ -45,7 +45,7 @@ model Execution {
 model Job {
     id          String    @id @default(cuid())
     executionId String
-    stepkey     String    @unique
+    stepkey     String
     status      JobStatus @default(WAITING)
     attempts    Int       @default(0)
     output      Json?

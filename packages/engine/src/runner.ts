@@ -30,7 +30,7 @@ export async function runWorkflow(def: WorkflowDefinition) {
     await jobQueue.add("job", {
         executionId: execution.id,
         stepIndex: 0,
-        step: firstStep
+        workflow: def
     });
 
     console.log("Execution queued:", execution.id);

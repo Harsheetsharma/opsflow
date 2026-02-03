@@ -1,15 +1,20 @@
 {
   "name": "@opsflow/worker",
   "private": true,
+  "type": "commonjs",
   "scripts": {
-    "dev": "ts-node src/index.ts"
+    "dev": "tsx src/index.ts"
   },
   "dependencies": {
     "@opsflow/db": "workspace:*",
     "@opsflow/engine": "workspace:*",
     "@opsflow/queue": "workspace:*",
+    "axios": "^1.13.4",
     "bullmq": "^5.67.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0"
   }
 }

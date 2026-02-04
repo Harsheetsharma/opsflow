@@ -26,3 +26,29 @@ services :
           interval: 5s
           timeout: 5s
           retries: 5
+
+      # api:
+      #   build:
+      #     context: ..
+      #     dockerfile: apps/api/Dockerfile
+
+      #   ports:
+      #     - "3000:3000"
+      #   depends_on:
+      #     - postgres
+      #     - redis
+      #   environment:
+      #     DATABASE_URL: postgresql://postgres:postgres@postgres:5432/opsflow
+      #     REDIS_HOST: redis
+
+      # worker:
+      #   build: 
+      #     context: ..
+      #     dockerfile: apps/worker/Dockerfile
+      #   depends_on:
+      #     - postgres
+      #     - redis
+      #   environment:
+      #     DATABASE_URL: postgresql://postgres:postgres@postgres:5432/opsflow
+      #     REDIS_HOST: redis
+        

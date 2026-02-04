@@ -7,6 +7,8 @@ and a fault-tolerant execution engine.
 
 ## System Architecture Diagram ( HLD + LLD )
 
+<img width="1745" height="788" alt="Screenshot 2026-02-04 182451" src="https://github.com/user-attachments/assets/eb9d761c-4160-4804-ac17-fadc526942a7" />
+
 API (Next.js control plane)
 ↓
 Workflow Engine

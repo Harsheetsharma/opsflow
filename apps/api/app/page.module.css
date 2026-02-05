@@ -1,153 +1,24 @@
-/* .page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
-}
-
-.main {
-  display: flex;
-  min-height: 100vh;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
-}
-
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
-}
-
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
-}
-
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
-}
-
-a.secondary {
-  border-color: var(--button-secondary-border);
-}
-
-/* Enable hover only on non-touch devices */
-/*
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-}
-
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
-} */
-
 
 .container {
   min-height: 100vh;
-  padding: 48px;
   background: #020617;
   color: #e5e7eb;
   font-family: system-ui, sans-serif;
+  padding: 0; /* remove extra padding since container2 handles hero centering */
+}
+
+.container3 {
+  min-height: 100vh;
+  padding: 40px;
+  background: #020617;
+  color: #e5e7eb;
+  font-family: system-ui, sans-serif;
+}
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* keep hero centered vertically in viewport */
 }
 
 /* Header */
@@ -346,6 +217,7 @@ a.secondary {
   --button_color: #0f172a;            /* dark slate */
   --button_outline_color: #6366f1;    /* indigo */
 
+  margin-top: 10px;
   display: block;
   box-sizing: border-box;
   border: 2px solid var(--button_outline_color);
@@ -410,4 +282,139 @@ a.secondary {
   margin-bottom: 20px; /* 10px gap + breathing room */
   font-size: 16px;
   color: #9ca3af;
+}
+
+.github {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  background-color: #6e5ce8; /* soft purple-blue to match theme */
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(110, 92, 232, 0.6), 0 0 30px rgba(110, 92, 232, 0.4);
+  transition: all 0.2s ease;
+}
+
+.github:hover {
+  background-color: #836eff;
+  box-shadow: 0 0 20px rgba(131, 110, 255, 0.8), 0 0 40px rgba(131, 110, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.github:active {
+  transform: translateY(1px);
+  box-shadow: 0 0 12px rgba(110, 92, 232, 0.6), 0 0 20px rgba(110, 92, 232, 0.4);
+}
+
+
+.myImage {
+  display: block;
+  margin: 20px auto; /* center horizontally */
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  max-width: 80%;
+  height: auto;
+}
+
+.aboutproject {
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  gap: 20px; /* smaller gap between stacked cards */
+  justify-content: center;
+  align-items: center; /* center content horizontally */
+  margin-top: 40px;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+
+.heroCard2 {
+  background: #1a1a2e; /* slightly different from hero section */
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* subtle shadow */
+  flex: 1 1 400px; /* grow/shrink, min width 400px */
+  max-width: 1200px;
+  color: #e5e7eb;
+}
+
+.heroCard2 img.myImage {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(138, 43, 226, 0.4); /* purple glowing shadow */
+  margin-top: 20px;
+}
+
+.heroCard2 h3 {
+  margin-top: 20px;
+  margin-bottom: 12px;
+  color: #a78bfa; /* light purple heading */
+}
+
+.heroCard2 p {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+
+/* Overlay base style */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+  z-index: 9999;
+
+  /* Transition for opacity */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Prevent interaction when invisible */
+}
+
+/* Visible overlay */
+.overlayVisible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Hidden overlay (for fade-out) */
+.overlayHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Zoomed image base style */
+.zoomedImage {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(138, 43, 226, 0.6);
+
+  /* Transition for opacity and transform */
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Image visible state */
+.imageVisible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Image hidden state (zoom out) */
+.imageHidden {
+  opacity: 0;
+  transform: scale(0.9);
 }

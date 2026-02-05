@@ -56,7 +56,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className={styles.container}>
+    <main className={styles.container3}>
       <header className={styles.header}>
         <div>
           <h1>OpsFlow</h1>

@@ -4,7 +4,7 @@
   background: #020617;
   color: #e5e7eb;
   font-family: system-ui, sans-serif;
-  padding: 0; /* remove extra padding since container2 handles hero centering */
+  padding: 0; 
 }
 
 .container3 {
@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh; /* keep hero centered vertically in viewport */
+  min-height: 80vh; 
 }
 
 /* Header */
@@ -198,7 +198,7 @@
   color: #64748b;
 }
 
-/* From Uiverse.io by Voxybuns */ 
+
 .button {
   /* Variables */
   --button_radius: 0.75em;
@@ -214,8 +214,8 @@
 .buttonTop {
   /* Color tokens */
   --button_radius: 0.75em;
-  --button_color: #0f172a;            /* dark slate */
-  --button_outline_color: #6366f1;    /* indigo */
+  --button_color: #0f172a;            
+  --button_outline_color: #6366f1;    
 
   margin-top: 10px;
   display: block;
@@ -233,7 +233,7 @@
 
 .buttonTop:hover {
   transform: translateY(-0.33em);
-  background: #020617; /* blends into page */
+  background: #020617; 
 }
 
 .buttonTop:active {
@@ -262,7 +262,7 @@
   background: rgba(15, 23, 42, 0.9);
   border: 1px solid rgba(99, 102, 241, 0.3);
 
-  /* Glow */
+  
   box-shadow:
     0 0 0 1px rgba(99, 102, 241, 0.25),
     0 0 40px rgba(99, 102, 241, 0.35),
@@ -279,7 +279,7 @@
 
 .subtitle {
   margin-top: 10px;
-  margin-bottom: 20px; /* 10px gap + breathing room */
+  margin-bottom: 20px; 
   font-size: 16px;
   color: #9ca3af;
 }
@@ -289,7 +289,7 @@
   bottom: 20px;
   right: 20px;
   padding: 12px 24px;
-  background-color: #6e5ce8; /* soft purple-blue to match theme */
+  background-color: #6e5ce8; 
   color: white;
   font-weight: bold;
   font-size: 14px;
@@ -379,7 +379,7 @@
   /* Transition for opacity */
   opacity: 0;
   transition: opacity 0.3s ease;
-  pointer-events: none; /* Prevent interaction when invisible */
+  pointer-events: none; 
 }
 
 /* Visible overlay */

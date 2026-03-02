@@ -9,6 +9,8 @@ export const worker = new Worker(
     async (job) => {
         const { executionId, stepIndex, workflow } = job.data;
         const step = workflow.steps[stepIndex];
+        console.log("running new workflow...");
+        console.log("time before", new Date().toISOString());
         console.log("Running step:", stepIndex, " ", step.key, "with id: ", executionId);
 
         const nextIndex = stepIndex + 1;
@@ -59,6 +61,7 @@ export const worker = new Worker(
                 });
 
                 console.log("Workflow completed");
+                console.log("time after", new Date().toISOString());
             }
 
             return result;

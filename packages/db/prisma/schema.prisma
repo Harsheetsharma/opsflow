@@ -23,10 +23,11 @@ enum JobStatus {
 }
 
 model workflow {
-    id         String   @id @default(cuid())
-    name       String
-    definition Json //full workflow json
-    createdAt  DateTime @default(now())
+    id             String   @id @default(cuid())
+    name           String
+    definition     Json //full workflow json
+    idempotencyKey String?  @unique
+    createdAt      DateTime @default(now())
 
     executions Execution[]
 }
@@ -37,6 +38,7 @@ model Execution {
     status     ExecutionStatus @default(PENDING)
     startedAt  DateTime?
     finishedAt DateTime?
+    result     Json?
 
     workflow workflow @relation(fields: [workflowId], references: [id])
     jobs     Job[]

@@ -9,4 +9,5 @@ export interface Step {
 export interface WorkflowDefinition {
     name: string;
     steps: Step[];
+    idempotencyKey?: string;
 }

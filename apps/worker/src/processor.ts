@@ -56,7 +56,8 @@ export const worker = new Worker(
                     where: { id: executionId },
                     data: {
                         status: "SUCCESS",
-                        finishedAt: new Date()
+                        finishedAt: new Date(),
+                        result
                     }
                 });
 
